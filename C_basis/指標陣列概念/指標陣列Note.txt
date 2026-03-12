@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+//指標宣告差異
+int v[3] = {1, 2, 3}; //宣告一個陣列
+int *p[3] = {&v[0], &v[1], &v[2]}; // 指標是指向陣列的第一個元素位址
+int  (*q)[3] = &v; //指標是指向一整個陣列v[3]
+
+/*string 字串陣列宣告 */
+char strA[] = "Hello"; 
+char *strB = "Hello"; //由系統自訂是const 
+
+strA[0]
+
+
+/*sizeof計算陣列*/ 
+int main() {
+printf("sizeof(v): %lu\n", sizeof(v)); //12
+printf("sizeof(v[0]): %lu\n", sizeof(v[0])); //4
+printf("sizeof(p): %lu\n", sizeof(&p[0])); //8 int*[3]
+printf("sizeof(q): %lu\n", sizeof(p)); //8 int(*)[3]
+
+}

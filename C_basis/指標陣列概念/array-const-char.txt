@@ -1,0 +1,21 @@
+#include <stdio.h>
+implement realse to 2606複製字串 my-strcpy
+
+//printf format = {const char* format ,s1,s2}
+//type pointer can convert const type pointer
+
+char strA[] = "Hello";
+char *strB ="Hello";
+const char *strC ="Hello";
+
+strA[0] = 'T'; //true
+strB[0] = 'T'; //undefied
+strC[0] = 'T'; //NO
+
+strA=strB; //X 陣列不能放等號左邊
+strA=strC; //陣列是地址無法被重新指定
+strB=strA; //O
+
+strB=strC; //strC是const他指向一個地址，如果把地址賦予給strB，strb就會指向一個const char* address
+strC=strA; //O
+strC=strB; //O 從可讀可寫變為只讀是可以的
